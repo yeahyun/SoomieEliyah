@@ -1,1 +1,173 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+
+<body>
+
+    <div class="img-popup-container">
+        <img id="map01Image" src="/img/img-popup-01.png" usemap="#image-map-popup01" style="display: none;">
+
+        <map name="image-map-popup01">
+            <area nohref coords="613,22,666,79" shape="rect" onclick="hideImage('map01Image')">
+        </map>
+
+        <img id="map02Image" src="/img/img-popup-02.png" usemap="#image-map-popup02" style="display: none;">
+
+        <map name="image-map-popup02">
+            <area nohref coords="613,22,666,79" shape="rect" onclick="hideImage('map02Image')">
+        </map>
+
+
+        <img id="map03Image" src="/img/img-popup-03.png" usemap="#image-map-popup03" style="display: none;">
+
+        <map name="image-map-popup03">
+            <area nohref coords="613,22,666,79" shape="rect" onclick="hideImage('map03Image')">
+        </map>
+
+
+
+        <img id="map04Image" src="/img/img-popup-04.png" usemap="#image-map-popup04" style="display: none;">
+
+        <map name="image-map-popup04">
+            <area nohref coords="613,22,666,79" shape="rect" onclick="hideImage('map04Image')">
+        </map>
+
+        <img id="map05Image" src="/img/img-popup-05.png" usemap="#image-map-popup05" style="display: none;">
+
+        <map name="image-map-popup05">
+            <area nohref coords="620,28,661,72" shape="rect" onclick="hideImage('map05Image')">
+            <area target="_blank" alt="천지샤브샤브" title="천지샤브샤브" href="https://map.naver.com/p/search/천지샤브샤브%202호점/place/1300236894?c=15.00,0,0,0,dh&amp;isCorrectAnswer=true" coords="39,218,328,540" shape="0">
+            <area target="_blank" alt="고육담" title="고육담" href="https://map.naver.com/p/search/고육담/place/1648094875?c=15.00,0,0,0,dh&amp;isCorrectAnswer=true" coords="367,224,650,537" shape="0">
+            <area target="_blank" alt="마초쉐프 건대점" title="마초쉐프 건대점" href="https://map.naver.com/p/search/마초쉐프%20건대점/place/605585253?c=15.00,0,0,0,dh&amp;isCorrectAnswer=true" coords="45,561,322,878" shape="0">
+            <area target="_blank" alt="최원석돼지한판" title="최원석돼지한판" href="https://map.naver.com/p/search/최원석의돼지한판/place/13067607?c=15.00,0,0,0,dh&amp;placePath=%3Fentry%253Dbmp" coords="366,563,657,876" shape="0">
+            <area target="_blank" alt="고베규카츠" title="고베규카츠" href="https://map.naver.com/p/search/고베규카츠%20건대점/place/1183785127?c=15.00,0,0,0,dh&amp;placePath=%3Fentry%253Dbmp" coords="46,907,327,1219" shape="0">
+            <area target="_blank" alt="아찌떡뽁이" title="아찌떡뽁이" href="https://map.naver.com/p/entry/place/13153060?c=15.00,0,0,0,dh" coords="364,907,652,1217" shape="0">
+        </map>
+
+    </div>
+
+
+
+
+    <div class="main">
+        <div class="inner">
+            <div class="cover" style="display: none;">
+                <img src="/img/img-landing-cover.png">
+            </div>
+
+            <img class="gif" src="/gif/ski.gif">
+
+            <img src="/img/img-landing.png" usemap="#image-map">
+
+
+
+            <map name="image-map">
+                <area target="_black" alt="img-map01" title="img-map01" nohref coords="479,2054,639,2102" shape="rect"
+                    onclick="showImage('map01Image')">
+                <area target="" alt="img-map02" title="img-map02" nohref coords="479,2542,643,2599" shape="0"
+                    onclick="showImage('map02Image')">
+                <area target="" alt="img-map03" title="img-map03" nohref coords="485,3030,643,3090" shape="0"
+                    onclick="showImage('map03Image')">
+                <area target="" alt="img-map04" title="img-map04" nohref coords="480,5104,649,5158" shape="0"
+                    onclick="showImage('map04Image')">
+                <area target="" alt="img-map05" title="img-map05" nohref coords="478,5587,642,5644" shape="0"
+                    onclick="showImage('map05Image')">
+            </map>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+
+<style>
+    body {
+        position: relative;
+        font-size: 0px;
+        margin: 0;
+    }
+    .cover {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+
+    .img-popup-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        /* margin-left: -505px;
+        margin-top: -185px; */
+    }
+
+    .img-popup-container img {
+        position: fixed;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .inner {
+        position: relative;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .inner .gif {
+        position: absolute;
+        top: 64%;
+        width: 75%;
+        left: 13%;
+        max-width: 700px;
+    }
+
+
+    .inner img {
+        /* position: absolute; */
+        max-width: 1180px;
+        width: 100%;
+
+    }
+</style>
+
+<script>
+    $(function () {
+        $('img[usemap]').rwdImageMaps();
+        $("#img").width("100%");
+    });
+
+    function showImage(imageId) {
+        var image = document.getElementById(imageId);
+        image.style.display = "block";
+
+        var cover = document.querySelector(".cover");
+        cover.style.display = "block"
+        console.log("print")
+    }
+
+    function hideImage(imageId) {
+        var image = document.getElementById(imageId);
+        image.style.display = "none";
+
+        var cover = document.querySelector(".cover");
+        cover.style.display = "none"
+        console.log("print")
+    }
+</script>
+
+</html>
